@@ -54,7 +54,7 @@ public class Generator {
     //проверяем есть ли край карт
     private static boolean isMineAt (int grid [][], final int x, final int y, final int width, final int height)
         {
-            if (x>0&&y>0&&width>0&&height>0) {
+            if (x>0&& y>0&& x<width && y<height) {
                 if (grid[x][y]==-1) {
                     return true;
                 }
