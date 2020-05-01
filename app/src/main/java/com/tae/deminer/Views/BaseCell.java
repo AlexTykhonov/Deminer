@@ -29,7 +29,7 @@ public abstract class BaseCell extends View {
         isRevealed = false;
         isClicked = false;
         isFlagged = false;
-        if (value==-1) {isBomb=true};
+        if (value==-1) {isBomb=true;};
 
         this.value = value;
     }
