@@ -1,5 +1,6 @@
 package com.tae.deminer;
 
+import android.app.Application;
 import android.content.Context;
 import android.util.Log;
 import android.view.View;
@@ -37,17 +38,24 @@ public class GameEngine {
 
         int [][] GeneratedGrid = Generator.generate(BOMB_NUMBER, WIDTH, HEIGHT);
         PrintGrid.print(GeneratedGrid, WIDTH,HEIGHT);
+        setGrid(context, GeneratedGrid);
     }
+
+
 
     private void setGrid (final Context context, final int [][]grid) {
     for (int x=0;x<WIDTH;x++) {
         for (int y=0;y<HEIGHT;y++) {
-            if (minseweepergrid[x][y]==null) minseweepergrid[x][y]= new Cell (context,y*WIDTH+x);
+            if (minseweepergrid[x][y]==null) {minseweepergrid[x][y]= new Cell (context,y*WIDTH+x);
+        }
+        minseweepergrid[x][y].setValue(grid[x][y]);
+        minseweepergrid[x][y].invalidate();
+        }
         }
     }
-    }
-
-    public View getCellAt(int position) {
-        return null;
+    public View getCellAt (int position) {
+     int x= position%WIDTH;
+     int y = position/HEIGHT;
+     return minseweepergrid[x][y];
     }
 }

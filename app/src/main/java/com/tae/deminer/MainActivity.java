@@ -13,5 +13,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Log.e("MainActivity", "OnCreate");
         GameEngine.getInstance().createGrid(this);
+        getSupportActionBar().hide();
+
     }
 }

@@ -13,7 +13,16 @@ public class Grid  extends GridView {
 
     public Grid(Context context, AttributeSet attributeSet) {
         super (context, attributeSet);
+        GameEngine.getInstance().createGrid(context);
 
+        setNumColumns(GameEngine.WIDTH);
+        setAdapter(new GridApater());
+    }
+
+
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec, widthMeasureSpec);
     }
 
     private class GridApater extends BaseAdapter {
