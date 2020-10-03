@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
-
 import com.tae.deminer.GameEngine;
 
 public class Grid  extends GridView {
@@ -14,7 +13,6 @@ public class Grid  extends GridView {
     public Grid(Context context, AttributeSet attributeSet) {
         super (context, attributeSet);
         GameEngine.getInstance().createGrid(context);
-
         setNumColumns(GameEngine.WIDTH);
         setAdapter(new GridApater());
     }

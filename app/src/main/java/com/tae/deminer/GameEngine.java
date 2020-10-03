@@ -19,12 +19,11 @@ public class GameEngine {
 
     private Cell[][] minseweepergrid = new Cell[WIDTH][HEIGHT];
 
-
     public static GameEngine getInstance () {
         if (instance == null) {
             instance = new GameEngine();
         }
-        return  instance;
+        return instance;
     }
 
     private GameEngine() {
@@ -41,8 +40,6 @@ public class GameEngine {
         setGrid(context, GeneratedGrid);
     }
 
-
-
     private void setGrid (final Context context, final int [][]grid) {
     for (int x=0;x<WIDTH;x++) {
         for (int y=0;y<HEIGHT;y++) {
@@ -53,9 +50,35 @@ public class GameEngine {
         }
         }
     }
-    public View getCellAt (int position) {
+
+    public Cell getCellAt (int position) {
      int x= position%WIDTH;
      int y = position/HEIGHT;
      return minseweepergrid[x][y];
+    }
+
+    public Cell getCellAt (int x, int y) {
+        return minseweepergrid[x][y];
+    }
+
+    public void click (int x, int y) {
+        if (x>=0 && y>=0 && x<WIDTH && y <HEIGHT && getCellAt(x,y).isClicked()) {
+
+            getCellAt(x, y).setClicked();
+            if (getCellAt(x, y).getValue()==0) {
+                for (int xt=-1;xt<1;xt++) {
+                    for (int yt=-1;yt<1;yt++) {
+                        if(xt!=yt) {
+                            click(x+xt, y+yt);
+                        }
+                    }
+                }
+            }
+         if (getCellAt(x, y).isBomb()) {onGameLost();}
+        }
+    }
+
+    private void onGameLost () {
+        //handle lost game
     }
 }
