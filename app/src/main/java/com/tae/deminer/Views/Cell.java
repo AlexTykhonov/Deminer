@@ -11,7 +11,7 @@ import androidx.core.content.ContextCompat;
 import com.tae.deminer.GameEngine;
 import com.tae.deminer.R;
 
-public class Cell extends BaseCell implements View.OnClickListener {
+public class Cell extends BaseCell implements View.OnClickListener, View.OnLongClickListener {
 
     public Cell(Context context, int position) {
         super(context);
@@ -30,6 +30,11 @@ public class Cell extends BaseCell implements View.OnClickListener {
         GameEngine.getInstance().click(getXpos(),getYpos());
     }
 
+    @Override
+    public boolean onLongClick(View v) {
+        GameEngine.getInstance().flag(getXpos(), getYpos());
+        return true;
+    }
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
@@ -101,4 +106,6 @@ public class Cell extends BaseCell implements View.OnClickListener {
         drawable.setBounds(0,0, getWidth(),getHeight());
         drawable.draw(canvas);
     }
+
+
 }

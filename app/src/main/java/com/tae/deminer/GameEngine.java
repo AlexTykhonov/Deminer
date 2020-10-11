@@ -78,6 +78,14 @@ public class GameEngine {
         }
     }
 
+
+    public void flag (int x, int y) {
+        boolean isFlagged = getCellAt(x, y).isFlagged();
+        getCellAt(x, y).setFlagged(!isFlagged);
+        getCellAt(x,y).invalidate();
+    }
+
+
     private void onGameLost () {
         //handle lost game
     }
