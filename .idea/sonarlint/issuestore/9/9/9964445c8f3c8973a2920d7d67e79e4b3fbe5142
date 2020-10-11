@@ -1,0 +1,18 @@
+
+\
+java:S1118":Add a private constructor to hide the implicit public one.(øÃÔ•øÿÿÿÿ8­§¶üœ.
+;
+java:S2119	"Save and re-use this "Random".(¡Å”¦8’ÿûœ.
+P
+java:S1121".Extract the assignment out of this expression.(Â§øÿÿÿÿ8˜•óüœ.
+Z
+java:S1854"8Remove this useless assignment to local variable "grid".(Â§øÿÿÿÿ8Š«ñüœ.
+Z
+java:S11977"8Move the array designator from the variable to the type.(Ú‡™½şÿÿÿÿ8İãÖüœ.
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ùŸä
+Z
+java:S1197$"8Move the array designator from the variable to the type.(Ø« µüÿÿÿÿ8™¢®üœ.
+„
+java:S4165"bRemove this useless assignment; "grid" already holds the assigned value along all execution paths.(Â§øÿÿÿÿ8Ê–òüœ.
+Q
+java:S1066:"/Merge this if statement with the enclosing one.(ºş‡ıÿÿÿÿ8İãÖüœ.

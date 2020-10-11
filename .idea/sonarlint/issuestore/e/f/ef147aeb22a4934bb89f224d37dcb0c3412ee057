@@ -1,0 +1,7 @@
+
+9
+java:S1643"Use a StringBuilder instead.(ÍãØæ8³Ÿıœ.
+X	java:S125"<This block of commented-out lines of code should be removed.(‰à§8›Ì÷şœ.
+\
+java:S1118":Add a private constructor to hide the implicit public one.(÷Ûµ•ıÿÿÿÿ8æğıœ.
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ùŸä

@@ -33,17 +33,23 @@ public class Cell extends BaseCell implements View.OnClickListener {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        Log.e ("Minesweeper", "CeLL* onDraw");
+        Log.d ("Minesweeper", "Cell::onDraw");
         drawButton(canvas);
+
         if(isFlagged()) {
             drawFlag(canvas);
-        } else if (isRevealed()&&isBomb()&&!isClicked()) {
+        } else if (isRevealed()&& isBomb() && !isClicked()) {
             drawBomb(canvas);
-        } else if (isClicked()) {
-            if (getValue()==-1) {
-                drawBombExploded(canvas);
-             } else drawNumber(canvas);
-        } else drawButton(canvas);
+        } else {
+            if (isClicked()) {
+                if (getValue()==-1) {
+                    drawBombExploded(canvas);
+                } else {
+                    drawNumber(canvas);
+                }
+            } else {drawButton(canvas);
+            }
+        }
     }
 
     private void drawButton (Canvas canvas) {
